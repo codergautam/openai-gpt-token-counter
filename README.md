@@ -55,7 +55,6 @@ This package supports a range of OpenAI models, including both text and chat mod
 ### Text Models
 
 - GPT3 (text-davinci-003, text-curie-001, text-babbage-001, text-ada-001)
-- GPT2 (no longer officially supported by OpenAI)
 
 For text models, no need to pass the model name as a string. Just use the text function, they should all use the same tokens calculation.
 

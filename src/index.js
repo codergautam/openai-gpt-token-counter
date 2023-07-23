@@ -1,8 +1,8 @@
 /**
-     * 
+     *
      * @param {*} messages { role: string; content: string; name: string }
      * @param {*} model "gpt-3.5-turbo" | "gpt-4" | "gpt-4-32k"
-     * @returns 
+     * @returns
      */
 const tiktoken = require("tiktoken");
 const get_encoding = tiktoken.get_encoding;
@@ -38,11 +38,11 @@ const encoding_for_model = tiktoken.encoding_for_model
         decodedstrs.push(tokenDecoded)
     }
       return encoded.length
-      
+
     }
 
 
 module.exports = {
   chat: getChatGPTEncoding,
-  text: (text) => require('gpt-3-encoder').encode(text).length;
+  text: (text, model=null) => require('gpt-3-encoder').encode(text).length
 }
