@@ -22,7 +22,7 @@ const openaiTokenCounter = require('openai-gpt-token-counter');
 
 ### Counting Tokens in Text
 
-To count the number of tokens in a text for a specific OpenAI model, use the `text` method:
+To count the number of tokens in a text for a specific OpenAI text model (ex: text-davinci-003), use the `text` method:
 
 ```javascript
 const text = "This is a test sentence.";
@@ -54,13 +54,15 @@ This package supports a range of OpenAI models, including both text and chat mod
 
 ### Text Models
 
-- GPT3 (text-davinci-003): `"text-davinci-003"`
-- GPT2 (text-gpt2-1.5-turbo): `"text-gpt2-1.5-turbo"`
-- Custom Text Model: You can use the model name of any other OpenAI text model you have access to.
+- GPT3 (text-davinci-003, text-curie-001, text-babbage-001, text-ada-001)
+- GPT2 (no longer officially supported by OpenAI)
+
+For text models, no need to pass the model name as a string. Just use the text function, they should all use the same tokens calculation.
 
 ### Chat Models
 
 - GPT3.5 Turbo: `"gpt-3.5-turbo"`
+- GPT3.5 16K: `"gpt-3.5-turbo-16k"`
 - GPT4: `"gpt-4"`
 - GPT4 32K: `"gpt-4-32k"`
 
