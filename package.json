@@ -1,0 +1,28 @@
+{
+  "name": "openai-gpt-token-counter",
+  "version": "1.0.4",
+  "description": "Count the number of OpenAI GPT tokens in a string",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "openai",
+    "gpt",
+    "gpt3",
+    "openai tokens",
+    "tokens",
+    "gpt3 tokens",
+    "gpt3 token counter",
+    "openai token counter",
+    "token gpt3"
+  ],
+  "author": "CoderGautamYT",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "gpt-3-encoder": "^1.1.4",
+    "node-fetch": "^3.2.6",
+    "tiktoken": "^1.0.10"
+  }
+}
