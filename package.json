@@ -1,6 +1,6 @@
 {
   "name": "openai-gpt-token-counter",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Count the number of OpenAI GPT tokens in a string",
   "main": "src/index.js",
   "scripts": {
