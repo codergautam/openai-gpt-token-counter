@@ -61,8 +61,9 @@ For chat models, provide an array of messages, where each message is an object w
 
 ```javascript
 const messages = [
+  { role: "system", content: "System prompt to guide the AI" },
   { role: "user", content: "Message content from the user" },
-  { role: "system", content: "System response to the user's message" },
+  { role: "assistant", content: "AI response to the user's message" },
   // Add more messages as needed
 ];
 ```
