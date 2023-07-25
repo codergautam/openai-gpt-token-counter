@@ -42,7 +42,6 @@
   "author": "CoderGautamYT",
   "license": "ISC",
   "dependencies": {
-    "gpt-3-encoder": "^1.1.4",
     "tiktoken": "^1.0.10"
   },
   "repository": {

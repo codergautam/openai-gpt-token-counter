@@ -5,7 +5,6 @@
  * @returns
  */
 const tiktoken = require("tiktoken");
-const get_encoding = tiktoken.get_encoding;
 const encoding_for_model = tiktoken.encoding_for_model
 
 function getChatGPTEncoding(
@@ -48,6 +47,6 @@ function deprecatedFunction() {
 }
 
 deprecatedFunction.chat = getChatGPTEncoding;
-deprecatedFunction.text = (text, model=null) => require('gpt-3-encoder').encode(text).length;
+deprecatedFunction.text = (text, model=null) => require('./Encoder.js').encode(text).length;
 
 module.exports = deprecatedFunction;
