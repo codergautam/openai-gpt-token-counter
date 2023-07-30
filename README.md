@@ -1,6 +1,7 @@
 # OpenAI GPT Token Counter
 
 ![npm](https://img.shields.io/npm/dt/openai-gpt-token-counter)
+![DT](https://img.shields.io/badge/TypeScript%20Support-DT-blue)
 
 This npm package is designed to count the number of OpenAI tokens in a given text or messages array. It supports various OpenAI text and chat models, and it has been verified for 100% accuracy.
 
