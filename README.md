@@ -7,7 +7,7 @@ This npm package is designed to count the number of OpenAI tokens in a given tex
 
 ## Installation
 
-Install the package using npm:
+You can install the package using npm:
 
 ```bash
 npm install openai-gpt-token-counter
