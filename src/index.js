@@ -6,6 +6,7 @@
  */
 const tiktoken = require("tiktoken");
 const encoding_for_model = tiktoken.encoding_for_model
+const encoder_cache = {};
 
 function getChatGPTEncoding(
     messages = [],
@@ -14,11 +15,15 @@ function getChatGPTEncoding(
     if(!Array.isArray(messages)) throw new Error('Please pass an array of messages in valid format to the chat function. Refer to the documentation for help ( https://www.npmjs.com/package/openai-gpt-token-counter )');
     const isGpt3 = model.startsWith("gpt-3.5")
 
-    const encoder = encoding_for_model(model, {
-        "<|im_start|>": 100264,
-        "<|im_end|>": 100265,
-        "<|im_sep|>": 100266,
-    });
+    let encoder = encoder_cache[model];
+    if (!encoder) {
+        encoder = encoding_for_model(model, {
+            "<|im_start|>": 100264,
+            "<|im_end|>": 100265,
+            "<|im_sep|>": 100266,
+        });
+        encoder_cache[model] = encoder;
+    }
 
     const msgSep = isGpt3 ? "\n" : "";
     const roleSep = isGpt3 ? "\n" : "<|im_sep|>";
