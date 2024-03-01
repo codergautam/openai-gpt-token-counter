@@ -51,7 +51,7 @@ const messages = [
   // Add more messages if needed
 ];
 
-const model = "gpt-3.5-turbo"; // Replace with your desired OpenAI chat model
+const model = "gpt-4"; // Replace with your desired OpenAI chat model
 
 const tokenCount = openaiTokenCounter.chat(messages, model);
 console.log(`Token count: ${tokenCount}`);
