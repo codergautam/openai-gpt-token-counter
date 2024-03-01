@@ -86,9 +86,12 @@ This package supports **all OpenAI chat/text models**, but the official ones we 
 - GPT4: `"gpt-4"`
 - GPT4 32K: `"gpt-4-32k"`
 
+## FineTuned Models
+Use the base model system to calculate the token count for fine-tuned models. For example, if you have a fine-tuned model based on `gpt-4`, you can use the `gpt-4` model to calculate the token count. Please report on the Github repository if you find any issues with fine-tuned models.
+
 ## Accuracy
 
-This module has been tested and verified for 100% accuracy against the OpenAI API's token count. Here is an example test code:
+This module has been tested and verified for 100% accuracy against the OpenAI API's token count. Don't take my word for it, run this example test code to see the accuracy:
 
 ```javascript
 import openaiTokenCounter from 'openai-gpt-token-counter';
