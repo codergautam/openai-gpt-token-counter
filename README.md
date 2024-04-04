@@ -92,12 +92,11 @@ This module has been tested and verified for 100% accuracy against the OpenAI AP
 
 ```javascript
 import openaiTokenCounter from 'openai-gpt-token-counter';
-import { Configuration, OpenAIApi } from "openai";
+import OpenAI from 'openai';
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+const openai = new OpenAI({
+  apiKey: process.env['OPENAI_API_KEY']
 });
-const openai = new OpenAIApi(configuration);
 
 (async () => {
   const model = "gpt-3.5-turbo";
@@ -114,11 +113,11 @@ const openai = new OpenAIApi(configuration);
     const tokenCount = openaiTokenCounter.chat(messages, model);
     console.log(`openai-gpt-token-counter Token count: ${tokenCount}`);
 
-    const chatCompletion = await openai.createChatCompletion({
+    const chatCompletion = await openai.chat.completions.create({
       model: model,
       messages: messages,
     });
-    console.log(`OpenAI API Token count: ${chatCompletion.data.usage.prompt_tokens}`);
+    console.log(`OpenAI API Token count: ${chatCompletion.usage.prompt_tokens}`);
     console.log("\n");
   }
 })();
