@@ -1,19 +1,17 @@
 /**
- *
- * @param {*} messages { role: string; content: string; name: string }
- * @param {*} model "gpt-3.5-turbo" | "gpt-4" | "gpt-4-32k"
- * @returns
+ * Count tokens in chat messages
+ * @param {Array<{role: string, content: string, name?: string}>} messages - Array of chat messages
+ * @param {string} model - Model name (e.g., "gpt-5", "gpt-5-mini", "gpt-5-nano")
+ * @returns {number} Number of tokens
  */
 const tiktoken = require("tiktoken");
-const encoding_for_model = tiktoken.encoding_for_model
+const encoding_for_model = tiktoken.encoding_for_model;
 const encoder_cache = {};
 
-function getChatGPTEncoding(
-    messages = [],
-    model = "gpt-3.5-turbo" | "gpt-4" | "gpt-4-32k"
-) {
+function getChatGPTEncoding(messages = [], model = "gpt-3.5-turbo") {
     if(!Array.isArray(messages)) throw new Error('Please pass an array of messages in valid format to the chat function. Refer to the documentation for help ( https://www.npmjs.com/package/openai-gpt-token-counter )');
-    const isGpt3 = model.startsWith("gpt-3.5")
+
+    const isGpt3 = model.startsWith("gpt-3.5");
 
     let encoder = encoder_cache[model];
     if (!encoder) {
@@ -36,14 +34,9 @@ function getChatGPTEncoding(
             .join(msgSep),
         "<|im_start|>assistant",
     ].join(msgSep);
-    let encoded = encoder.encode(serialized, "all");
-    let decodedstrs = []
-    for (let token of encoded) {
-    var tokenDecoded = (new TextDecoder().decode(encoder.decode([token])));
-    decodedstrs.push(tokenDecoded)
-}
-    return encoded.length
 
+    let encoded = encoder.encode(serialized, "all");
+    return encoded.length;
 }
 
 
